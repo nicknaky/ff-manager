@@ -1,0 +1,27 @@
+<ion-content>
+
+
+
+	<div>
+		<h1>{{test}}</hi>
+
+		<button ng-click="login()"> Login </button>
+
+	</div>
+
+	<div class="card">
+	  <div class="item item-text-wrap">
+	    <p>This is a basic Card which contains an item that has wrapping text.</p>
+	    <p>This is a basic Card which contains an item that has wrapping text.</p>
+	    <p ng-if='ready.league' >{{leagueData}}</p>
+	  </div>
+	</div>
+
+	<button ng-if='ready.token === true' ng-click='getLeagueData()' id='league-button' class="button button-large button-calm">
+	  Get League Data
+	</button>	
+
+
+	
+
+</ion-content>

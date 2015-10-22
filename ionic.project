@@ -1,0 +1,12 @@
+{
+  "name": "nick_ff_mobile",
+  "app_id": ""
+
+	,
+  "proxies": [
+      {
+        "path": "/fantasy/v2",
+        "proxyUrl": "http://fantasysports.yahooapis.com/fantasy/v2"
+      }
+    ]
+}
