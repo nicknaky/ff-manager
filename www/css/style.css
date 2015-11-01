@@ -1,3 +1,9 @@
+.input-test {
+	margin: 10px;
+	min-width: calc(100%/1.5);
+}
+
+
 #league-button {
 	
 	
@@ -5,4 +11,66 @@
 	right: 0;
 
 }
+
+
+.team-pos {
+	font-size: 1.2em;
+	display: inline-block;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.player-container {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.player-points {
+	display: inline-block;
+	float: right;
+	text-align: right;
+}
+
+.player-name {
+	font-size: 1.2em;
+}
+
+.player-team {
+	font-size: 0.8em;
+}
+
+.player-matchup{
+	font-size: 0.8em;
+}
+
+li.roster {
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+.full {
+	min-height: 100%;
+	min-width: 100%
+}
+
+.refresh-button {
+	position: absolute;
+	right: 0;
+	color: white;
+	background-color: inherit;
+	border: none;
+	font-size: 2em;
+}
+
+/*
+.vertical_center {
+	top: 50%;
+	transform: translateY(-50%);
+}*/
+
+
+
+
+
+
 

@@ -6,37 +6,57 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title></title> 
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/materialize.min.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
 
 
+    <script src="lib/jquery-2.1.4.js"></script>
 
     <script src="lib/ionic/js/ionic.bundle.min.js"></script>    
     
-
+<!-- 
     <script src="lib/lodash.js"></script>
     <script src="lib/restangular.js"></script>
-
-
+ -->
+    <script src="lib/angular-base64.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    
     <script src="cordova.js"></script>
 
     <script src="js/main.js"></script>
 
     <script src="js/controllers/HomeCtrl.js"></script>    
     <script src="js/services/OauthService.js"></script>
+    <script src="js/services/TransformRequestAsFormPost.js"></script>
   </head>
 
 
 
   <body ng-app="nickff">
+
+<!--     <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper blue-grey darken-4">
+            <a href="#" class="left brand-logo">Nick FF</a>
+            <ul id="nav-mobile" class="right ">
+                <li><a href=""><i class="material-icons">search</i></a></li>
+                <li><a href=""><i class="material-icons">view_module</i></a></li>
+                <li><a href=""><i class="material-icons">refresh</i></a></li>
+                <li><a href=""><i class="material-icons"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+ -->
+
+
+
     
-    <ion-header-bar align-title="center" class="bar-calm">
-      <h1 class="title">Nick FF Mobile</h1>
-    </ion-header-bar>
-    
-      <ui-view></ui-view>
+    <ui-view></ui-view>
     
     
   </body>
