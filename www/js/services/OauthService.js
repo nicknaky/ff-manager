@@ -1,8 +1,3 @@
-// nick ff mobile
-// $http.defaults.headers.common.Authorization = 'Basic ZGoweUptazlaa2huWVVNMVprUjRUM014Sm1ROVdWZHJPVTFxYTNoV1JFRXlUVEpWYldOSGJ6bE5RUzB0Sm5NOVkyOXVjM1Z0WlhKelpXTnlaWFFtZUQwMVpBLS06OGU3OTZiNTBiNWQyNWExOTk5ZTBhZTFhZDZhYzdkMTUxMDI1NzI4Nw=='
-// var CLIENT_ID = "dj0yJmk9ZkhnYUM1ZkR4T3MxJmQ9WVdrOU1qa3hWREEyTTJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD01ZA--";
-// var CLIENT_SECRET = "8e796b50b5d25a1999e0ae1ad6ac7d1510257287";
-
 angular.module('nickff')
 .factory('OauthService', [
 	'$rootScope',
@@ -40,7 +35,6 @@ function OauthService($rootScope, $http, $timeout) {
 		},
 		sendQuery: sendQuery,
 		sendAddDrop: sendAddDrop,
-		testTheWaters: testTheWaters,
 		getAvailablePlayers: getAvailablePlayers,
 		startChain: startChain,
 		clearPlayers: clearPlayers
@@ -107,72 +101,11 @@ function OauthService($rootScope, $http, $timeout) {
 			})
 		});
 
-	// 	sendAddDrop(availablePlayers[1].key, initialP).then(
-	// 		sendAddDrop(availablePlayers[2].key, availablePlayers[1].key).then(
-	// 			sendAddDrop(availablePlayers[3].key, availablePlayers[2].key).then(
-	// 				sendAddDrop(availablePlayers[4].key, availablePlayers[3].key).then(
-	// 					sendAddDrop(availablePlayers[5].key, availablePlayers[4].key).then(
-	// 						sendAddDrop(availablePlayers[6].key, availablePlayers[5].key).then(
-	// 							sendAddDrop(availablePlayers[7].key, availablePlayers[6].key).then(
-	// 								sendAddDrop(availablePlayers[8].key, availablePlayers[7].key).then(
-	// 									sendAddDrop(availablePlayers[9].key, availablePlayers[8].key).then(
-	// 										sendAddDrop(availablePlayers[10].key, availablePlayers[9].key).then(
-	// 											sendAddDrop(availablePlayers[11].key, availablePlayers[10].key).then(
-	// 												sendAddDrop(availablePlayers[12].key, availablePlayers[11].key).then(
-	// 													sendAddDrop(availablePlayers[13].key, availablePlayers[12].key).then(
-	// 														sendAddDrop(availablePlayers[14].key, availablePlayers[13].key).then(
-	// 															function() {
-	// 																console.log("finished.");
-	// 															},
-	// 															function(e) {
-	// 																console.log(e);
-	// 															}))))))))))))));
-
-
-
 	}
 
-	// var chain1 = function() {
-	// 	sendAddDrop("348.p.4416", "348.p.4269");
-	// };
-
-	var chain2 = function() {
-		return sendAddDrop("348.p.5046", "348.p.4416");
-	};
-
-	var chain3 = function() {
-		return sendAddDrop("348.p.5381", "348.p.5046");
-	};
-
-	var chain4 = function() {
-		return sendAddDrop("348.p.5447", "348.p.5381");
-	};
-
-	var chain5 = function() {
-		return sendAddDrop("348.p.5448", "348.p.5447");
-	};
-
-	var chain6 = function() {
-		return sendAddDrop("348.p.5477", "348.p.5448");
-	};
 
 	return Oauth;
 
-
-
-	function testTheWaters() {
-		// chain1().then(
-			chain2().then(
-				chain3().then(
-					chain4().then(
-						chain5().then(
-							chain6.then()
-						)
-					)
-				)
-			);
-		// );	
-	}
 
 	
 	function getRoster() {

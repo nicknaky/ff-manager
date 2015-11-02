@@ -53,14 +53,43 @@ li.roster {
 	min-width: 100%
 }
 
-.refresh-button {
-	position: absolute;
-	right: 0;
+.nav-button {
+	/*position: absolute;*/
+/*	right: 0;*/
 	color: white;
 	background-color: inherit;
 	border: none;
 	font-size: 2em;
 }
+
+.right {
+	position: absolute;
+	right: 0;
+}
+
+.left {
+	position: absolute;
+	left: 0;
+}
+
+/*.nick-side-menu {
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 50%;
+	background-color: blue;
+}
+*/
+.nick-hide {
+	transition: transform 1s linear;
+	transform: translate3d(-100%);
+}
+
+.nick-show {
+	transition: transform 1s linear;
+	transform: translate3d(100%);
+}
+
 
 /*
 .vertical_center {

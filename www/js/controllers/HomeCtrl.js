@@ -28,7 +28,7 @@ function HomeCtrl($rootScope, $scope, OauthService, $timeout) {
 
 	$scope.go = function() {
 		console.log("commencing operation test the waters!");
-		OauthService.testTheWaters();
+		// OauthService.testTheWaters();
 	};
 
 
