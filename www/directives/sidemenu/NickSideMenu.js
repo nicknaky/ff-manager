@@ -1,3 +1,31 @@
+function toggleSideMenu() {
+	var sideMenu = document.querySelector('nick-side-menu');
+	var overlay = document.querySelector('.nick-overlay');
+
+	if (!sideMenu.classList.contains('nick-active')) {
+		sideMenu.classList.add('nick-active');
+		sideMenu.style.transition = 'transform .3s ease';
+		sideMenu.style.transform = 'translateX(100%)';
+		sideMenu.style.webkitTransition = 'transform .3s ease';
+		sideMenu.style.webkitTransform = 'translateX(100%)';
+		$timeout(function() {
+			overlay.style.visibility = 'visible';
+		}, 300);
+		
+	}
+
+	else {
+		sideMenu.classList.remove('nick-active');
+		sideMenu.style.transition = 'transform .3s ease';
+		sideMenu.style.transform = 'translateX(0%)';
+		sideMenu.style.webkitTransition = 'transform .3s ease';
+		sideMenu.style.webkitTransform = 'translateX(0%)';
+		
+		overlay.style.visibility = 'hidden';
+
+	}
+}
+
 angular.module('nickff')
 .directive('nickSideMenu', function () {
 
@@ -7,12 +35,15 @@ angular.module('nickff')
 
 			elem.css({
 				position: 'absolute',
-				left: '-50%',
+				// left: '0', // generates an open sidemenu for development, comment this out after
+				 left: '-80%',
 				height: '100%',
-				width: '50%',
+				width: '80%',
 				marginTop: '20px',
-				backgroundColor: 'blue',
-				zIndex: '5'
+				backgroundColor: 'white',
+				zIndex: '5',
+				paddingTop: '40px',
+				paddingLeft: '16px',
 			});
 
 			var overlay = document.createElement('div');
@@ -20,23 +51,28 @@ angular.module('nickff')
 			angular.element(overlay).css({
 				height: '100%',
 				width: '100%',
-				marginLeft: '100%',
+				position: 'absolute',
 				backgroundColor: 'black',
 				opacity: '0.3',
 				visibility: 'hidden'
-
 			});
 
-			elem.prepend(overlay);
+			document.body.appendChild(overlay);
 
-
+			angular.element(overlay).on('click', function(e) {
+				elem.removeClass('nick-active');
+				elem.css({
+					transition: 'transform 0.3s ease',
+					transform: 'translateX(0%)',
+					webkitTransition: 'transform 0.3s ease',
+					webkitTransform: 'translateX(0%)'
+				});
+				overlay.style.visibility = 'hidden';
+			});
 
 		},
 
-		// templateUrl: "directives/sidemenu/nicksidemenu.html"
 	};
-
-
 })
 
 .directive('nickToggle', function($timeout) {
@@ -50,8 +86,6 @@ angular.module('nickff')
 
 				if (!sideMenu.classList.contains('nick-active')) {
 					sideMenu.classList.add('nick-active');
-					
-					
 					sideMenu.style.transition = 'transform .3s ease';
 					sideMenu.style.transform = 'translateX(100%)';
 					sideMenu.style.webkitTransition = 'transform .3s ease';
@@ -60,24 +94,18 @@ angular.module('nickff')
 						overlay.style.visibility = 'visible';
 					}, 300);
 					
-					
 				}
 
 				else {
 					sideMenu.classList.remove('nick-active');
-					
-					
 					sideMenu.style.transition = 'transform .3s ease';
 					sideMenu.style.transform = 'translateX(0%)';
 					sideMenu.style.webkitTransition = 'transform .3s ease';
 					sideMenu.style.webkitTransform = 'translateX(0%)';
 					
-					// $timeout(function() {
-						overlay.style.visibility = 'hidden';	
-					// }, 500);
+					overlay.style.visibility = 'hidden';
 
 				}
-				
 
 			});		
 
@@ -89,21 +117,3 @@ angular.module('nickff')
 ;
 
 
-
-// .nick-side-menu {
-// 	position: absolute;
-// 	left: 0;
-// 	height: 100%;
-// 	width: 50%;
-// 	background-color: blue;
-// }
-
-// .nick-hide {
-// 	transition: transform .5s linear;
-// 	transform: translate3d(-100%);
-// }
-
-// .nick-show {
-// 	transition: transform .5s linear;
-// 	transform: translate3d(100%);
-// }

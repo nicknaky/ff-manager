@@ -25,10 +25,13 @@
 
     <script src="js/main.js"></script>
 
-    <script src="js/controllers/RootCtrl.js"></script>    
-    <script src="js/controllers/HomeCtrl.js"></script>    
+    <script src="js/controllers/RootCtrl.js"></script>
+    <script src="js/controllers/HomeCtrl.js"></script>
+    <script src="js/controllers/RosterCtrl.js"></script>
+    
+
     <script src="js/services/OauthService.js"></script>
-    <script src="js/services/TransformRequestAsFormPost.js"></script>
+
 
     <!-- Directives -->
     <script src="directives/sidemenu/NickSideMenu.js"></script>
@@ -37,13 +40,33 @@
   </head>
   <body ng-app="nickff" ng-controller="RootCtrl">
 
-    <ion-header-bar align-title="left" class="blue-grey darken-4 white-text">
+    <ion-header-bar no-tap-scroll="true" align-title="left" class="blue-grey darken-4 white-text">
         <button class="icon icon-left left ion-navicon nav-button" nick-toggle></button>
         <h1 class="title white-text">Nick FF Mobile</h1>
         <button class="icon icon-right right ion-refresh nav-button" ng-click="refreshData()"></button>
     </ion-header-bar>
 
-    <nick-side-menu>
+    <nick-side-menu class="roboto-medium text-grey">
+        <ul>
+            <li>
+                <div ng-click="selectOption('home')" class="menu-item">Home</div>
+            </li>
+            <li>
+                <div ng-click="selectOption('roster')" class="menu-item">Roster</div>
+            </li>
+            <li>
+                <div ng-click="selectOption('matchup')" class="menu-item">Matchup</div>
+            </li>
+            <li>
+                <div ng-click="selectOption('transactions')" class="menu-item">Transactions</div>
+            </li>
+            <li>
+                <div ng-click="selectOption('settings')" class="menu-item">Settings</div>
+            </li>
+            <li>
+                <div ng-click="selectOption('automation')" class="menu-item">Automation</div>
+            </li>
+        </ul>
     </nick-side-menu>
     
 

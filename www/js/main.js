@@ -4,9 +4,6 @@ var leagueKey = null;
 var token = null;
 
 
-
-
-
 angular.module('nickff', ['ionic', 'base64'])
 
 .run(function($ionicPlatform) {
@@ -44,6 +41,12 @@ angular.module('nickff', ['ionic', 'base64'])
     url: '/',
     templateUrl: 'templates/home.html',
     controller: 'HomeCtrl'
+  })
+
+  .state('roster', {
+    url: '/',
+    templateUrl: 'templates/roster.html',
+    controller: 'RosterCtrl'
   });
 
   

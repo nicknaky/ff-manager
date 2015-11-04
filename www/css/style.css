@@ -1,17 +1,64 @@
-.input-test {
+@font-face {
+	font-family: 'Roboto Regular';
+	src: url('../font/roboto/Roboto-Regular.woff2');
+}
+@font-face {
+	font-family: 'Roboto Medium';
+	src: url('../font/roboto/Roboto-Medium.woff2');
+}
+@font-face {
+	font-family: 'Roboto Light';
+	src: url('../font/roboto/Roboto-Light.woff2');
+}
+@font-face {
+	font-family: 'Roboto Thin';
+	src: url('../font/roboto/Roboto-Thin.woff2');
+}
+@font-face {
+	font-family: 'Roboto Bold';
+	src: url('../font/roboto/Roboto-Bold.woff2');
+}
+
+.roboto-regular {
+	font-family: 'Roboto Regular';
+}
+.roboto-medium {
+	font-family: 'Roboto Medium';
+}
+.roboto-light {
+	font-family: 'Roboto Light';
+}
+.roboto-thin {
+	font-family: 'Roboto Thin';
+}
+.roboto-bold {
+	font-family: 'Roboto Bold';
+}
+
+.text-grey {
+	color: #424242;
+}
+
+
+
+/*Side Menu*/
+
+.menu-item {
+	font-size: 1.3em;
 	margin: 10px;
-	min-width: calc(100%/1.5);
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	
 }
 
+/*==========*/
+/*Roster*/
 
-#league-button {
-	
-	
-	/*margin-bottom: 20px;*/
-	right: 0;
-
+li.roster {
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
 }
-
 
 .team-pos {
 	font-size: 1.2em;
@@ -43,10 +90,31 @@
 	font-size: 0.8em;
 }
 
-li.roster {
-	padding-top: 5px !important;
-	padding-bottom: 5px !important;
+
+
+
+
+/*==========*/
+
+
+.input-test {
+	margin: 10px;
+	min-width: calc(100%/1.5);
 }
+
+
+#league-button {
+	
+	
+	/*margin-bottom: 20px;*/
+	right: 0;
+
+}
+
+
+
+
+
 
 .full {
 	min-height: 100%;
@@ -71,31 +139,6 @@ li.roster {
 	position: absolute;
 	left: 0;
 }
-
-/*.nick-side-menu {
-	position: absolute;
-	left: 0;
-	height: 100%;
-	width: 50%;
-	background-color: blue;
-}
-*/
-.nick-hide {
-	transition: transform 1s linear;
-	transform: translate3d(-100%);
-}
-
-.nick-show {
-	transition: transform 1s linear;
-	transform: translate3d(100%);
-}
-
-
-/*
-.vertical_center {
-	top: 50%;
-	transform: translateY(-50%);
-}*/
 
 
 
