@@ -2,12 +2,20 @@ angular.module('nickff')
 .controller('RootCtrl', [
 	'$scope',
 	'$state',
+	'OauthService',
 	RootCtrl
 	]);
 
 
-function RootCtrl($scope, $state) {
+function RootCtrl($scope, $state, OauthService) {
 
+	$scope.login = function() {
+		OauthService.login();
+	};
+
+	$scope.refreshData = function() {
+		OauthService.login();
+	};
 
 	$scope.selectOption = function(optionName) {
 		console.log("Selected option: " + optionName);

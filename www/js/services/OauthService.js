@@ -3,10 +3,11 @@ angular.module('nickff')
 	'$rootScope',
 	'$http',
 	'$timeout',
+	'Utilities',
 	OauthService
 	]);
 
-function OauthService($rootScope, $http, $timeout) {
+function OauthService($rootScope, $http, $timeout, Utilities) {
 
 	var BASE_OAUTH = "https://api.login.yahoo.com/oauth2/request_auth";
 	var CLIENT_ID = "dj0yJmk9UlRheHk1U3ZHWHN6JmQ9WVdrOVVqaDVSRE0yTTJNbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1hYg--";
@@ -18,8 +19,6 @@ function OauthService($rootScope, $http, $timeout) {
 	var teamName = null;
 	var manager = null;
 
-	var leagueKey = null;
-	var teamKey = null;
 	var roster = [];
 	var availablePlayers = [];
 	
@@ -240,6 +239,18 @@ function OauthService($rootScope, $http, $timeout) {
 		var options = 'location=no,hardwareback=no,zoom=no,toolbar=no,';
 		var target = '_blank';
 
+
+		if (Utilities.doesCordovaExist()) {
+
+
+		} 
+
+		else {
+
+
+		}
+
+
 		var ref = cordova.InAppBrowser.open(OAUTH_URL, target, options);
 
 		ref.addEventListener('loadstart', function(e) {
@@ -333,7 +344,7 @@ function OauthService($rootScope, $http, $timeout) {
 			console.log("teamKey: " + teamKey);
 			console.log(teamName);
 			console.log(manager);
-			getRoster();
+			// getRoster();
 
 		}, errorCallback);
 

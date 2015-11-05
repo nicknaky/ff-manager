@@ -1,7 +1,12 @@
 //GLOBALS
-
-var leagueKey = null;
 var token = null;
+var leagueKey = null;
+var teamKey = null;
+
+
+function defaultErrorCallback(e) {
+    console.log(e);
+}
 
 
 angular.module('nickff', ['ionic', 'base64'])
@@ -27,6 +32,7 @@ angular.module('nickff', ['ionic', 'base64'])
 
     console.log("Device is ready from main.js!");
     console.log("window.open works well");
+
 
   });
 
