@@ -49,6 +49,12 @@ angular.module('nickff', ['ionic', 'base64'])
     controller: 'HomeCtrl'
   })
 
+  .state('iframe-login', {
+    url: '/iframe-login',
+    templateUrl: 'templates/iframe.login.html',
+    controller: 'HomeCtrl'
+  })
+
   .state('roster', {
     url: '/',
     templateUrl: 'templates/roster.html',

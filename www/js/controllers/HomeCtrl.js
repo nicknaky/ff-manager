@@ -4,11 +4,12 @@ angular.module('nickff')
 	'$scope',
 	'OauthService',
 	'$timeout',
+	'$location',
 	HomeCtrl
 	]);
 
 
-function HomeCtrl($rootScope, $scope, OauthService, $timeout) {
+function HomeCtrl($rootScope, $scope, OauthService, $timeout, $location) {
 
 
 
@@ -142,6 +143,22 @@ function HomeCtrl($rootScope, $scope, OauthService, $timeout) {
 		OauthService.getLeagueKey();
 
 	};
+
+	$scope.$watch(
+		function(){
+	    return $location.search();
+	}, function(value){
+	    console.log(document.location);
+
+	    var searchParam = window.location.search;
+	    var code = searchParam.split('code=')[1];
+	    console.log("code: " + code);
+
+	    if(code !== undefined) {
+	    	OauthService.login(code);
+	    }
+
+	});
 
 
 }

@@ -1,0 +1,94 @@
+
+
+<ion-content class='blue-grey darken-3 '>
+
+	<div class='blue-grey darken-3'>
+
+		<h6 class='white-text'>https://fantasysports.yahooapis.com/fantasy/v2/</h6>
+
+		<div class="input-test"> 
+			<input ng-model="input.field1" class="input-test" value="hi"> </input>
+			<button ng-click="submit(input.field1, 1)">Submit</button>
+			<button ng-click="pasteLeagueKey(1)">leagueKey</button>
+			<button ng-click="pasteTeamKey(1)">teamKey</button>
+			<button ng-click="pasteUseLogin(1)">Use Login</button>
+			<button ng-click="pasteJSON(1)">JSON</button>
+			<button ng-click="clear(1)">Clear</button>
+
+		</div>
+		
+		<div class="input-test"> 
+			<input ng-model="input.field2" class="input-test" value="hi"> </input>
+			<button ng-click="submit(input.field2, 2)">Submit</button>
+			<button ng-click="pasteLeagueKey(2)">leagueKey</button>
+			<button ng-click="pasteTeamKey(2)">teamKey</button>
+			<button ng-click="pasteUseLogin(2)">Use Login</button>
+			<button ng-click="pasteJSON(2)">JSON</button>
+			<button ng-click="clear(2)">Clear</button>
+
+		</div>
+
+		<div class="input-test"> 
+			<input ng-model="input.field3" class="input-test" value="hi"> </input>
+			<button ng-click="submit(input.field3, 3)">Submit</button>
+			<button ng-click="pasteLeagueKey(3)">leagueKey</button>
+			<button ng-click="pasteTeamKey(3)">teamKey</button>
+			<button ng-click="pasteUseLogin(3)">Use Login</button>
+			<button ng-click="pasteJSON(3)">JSON</button>
+			<button ng-click="clear(3)">Clear</button>
+		</div> 
+
+		<h6>Send Add/Drop</h6>
+		<div class="input-test"> 
+			<div>Add</div>
+			<input ng-model="input.add" class="input-test" value="hi"> </input>
+			<div>Drop</div>
+			<input ng-model="input.drop" class="input-test" value="hi"> </input>
+			<button ng-click="submitAddDrop()">Submit</button>
+			<button ng-click="clearAddDrop()">Clear</button>
+			<button ng-click="go()">Ops</button>
+		</div> 
+
+		<div>
+			<button ng-click="getAvailablePlayers()">Get Available Players</button>
+			<input ng-model="input.startChain" value="348.p."></input>
+			<button ng-click="startChain()">Start Chain</button>
+		</div>
+
+		<div>
+			
+			<button ng-click="clearPlayers()">Clear Avail Players</button>
+
+		</div>
+
+
+      	<ul class="collection">
+            <li class="collection-item blue-grey darken-3 white-text roster" ng-repeat="player in players">
+            	<div>
+	            	<div class="team-pos">QB</div>
+	            	<div class="player-container">
+	            		<div class="player-info">
+	            			<span class='player-name'> Eli Manning</span> <span class="player-team">NYG - QB</span>
+	            		</div>
+	            		<div class="player-matchup">Sun 1:00PM v DAL </div>	
+	            	</div>
+	            	<div class="player-points">
+		            	<div class="player-act">-</div>
+		            	<div class="player-proj">17.25</div>
+	            	</div>	
+            	</div>
+            </li>
+      	</ul>
+
+
+
+
+	</div>
+</ion-content>
+
+
+
+
+
+
+
