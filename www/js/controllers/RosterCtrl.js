@@ -10,8 +10,12 @@ function RosterCtrl($scope, Roster) {
 
 
 	$scope.getRoster = function() {
-		Roster.fetchData();
+		$scope.roster = Roster.getRoster();
+		console.log("$scope.roster:");
+		console.log($scope.roster);
 	};
+
+
 
 }
 

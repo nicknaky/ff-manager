@@ -20,8 +20,29 @@ function OauthService($rootScope, $http, $timeout, Utilities, $base64) {
 
 	return {
 		login: login,
-		validateLogin: validateLogin
+		validateLogin: validateLogin,
+		sendQuery: sendQuery
+
 	};
+
+	function sendQuery(query)  {
+
+		var url = 'https://fantasysports.yahooapis.com/fantasy/v2/' + query;
+
+		console.log("url: " + url);
+		// var url = 'http://fantasysports.yahooapis.com/fantasy/v2/users;use_login=1/teams;team_keys=' + teamKey + '/roster?format=json';
+		var rosterRequest = {
+			method: "GET",
+			url: url
+		};
+		$http(rosterRequest).then(function(response) {
+			console.log("Success!");
+			results = response;
+			console.log(results);
+		}, errorCallback);
+
+
+	}
 
 
 	function validateLogin() {
@@ -129,18 +150,16 @@ function OauthService($rootScope, $http, $timeout, Utilities, $base64) {
 		};
 		$http(teamRequest).then(function(response) {
 			teamKey = response.data.fantasy_content.users[0].user[1].games[0].game[1].teams[0].team[0][0].team_key;
-			leagueKey = team.substring(0, team.length-4);
+			leagueKey = teamKey.substring(0, teamKey.length-4);
 			teamName = response.data.fantasy_content.users[0].user[1].games[0].game[1].teams[0].team[0][2].name;
 			manager = response.data.fantasy_content.users[0].user[1].games[0].game[1].teams[0].team[0][14].managers[0].manager.nickname;
 			console.log("Fetching teamKey success! " );
 			console.log(response);
 			console.log("teamKey: " + teamKey);
-			console.log("leageKey: " + leageKey);
+			console.log("leagueKey: " + leagueKey);
 			console.log("teamName: " + teamName);
 			console.log("manager: " + manager);
-			// getRoster();
 
-			getLeagueKey();
 		}, errorCallback);
 
 	}

@@ -60,15 +60,15 @@ function HomeCtrl($rootScope, $scope, OauthService, $timeout, $location) {
 		switch(fieldNum) {
 
 			case 1:
-				$scope.input.field1 += OauthService.leagueKey();
+				$scope.input.field1 += leagueKey;
 				break;
 			
 			case 2:
-				$scope.input.field2 += OauthService.leagueKey();
+				$scope.input.field2 += leagueKey;
 				break;
 
 			case 3:
-				$scope.input.field3 += OauthService.leagueKey();
+				$scope.input.field3 += leagueKey;
 				break;
 
 			default:
@@ -89,7 +89,7 @@ function HomeCtrl($rootScope, $scope, OauthService, $timeout, $location) {
 
 	$scope.pasteTeamKey = function(fieldNum) {
 
-		$scope.input["field" + fieldNum] += OauthService.teamKey();
+		$scope.input["field" + fieldNum] += teamKey;
 	};
 
 
