@@ -84,6 +84,11 @@ li.roster {
 
 .player-team {
 	font-size: 0.8em;
+	padding-left: 10px;
+}
+
+.player-info {
+	display: flex;
 }
 
 .player-matchup{

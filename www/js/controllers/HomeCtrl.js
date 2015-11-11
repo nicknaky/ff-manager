@@ -5,11 +5,12 @@ angular.module('nickff')
 	'OauthService',
 	'$timeout',
 	'$location',
+	'$http',
 	HomeCtrl
 	]);
 
 
-function HomeCtrl($rootScope, $scope, OauthService, $timeout, $location) {
+function HomeCtrl($rootScope, $scope, OauthService, $timeout, $location, $http) {
 
 
 
@@ -19,8 +20,44 @@ function HomeCtrl($rootScope, $scope, OauthService, $timeout, $location) {
 		field3: '',
 		add: '348.p.4269',
 		drop: '348.p.9527',
-		startChain: '348.p.'
+		startChain: '348.p.',
+		getAnything: '',
+		postAnything: ''
 	};
+
+
+	$scope.getMe = function() {
+
+
+		var url = "https://agile-ridge-4422.herokuapp.com/get/" + $scope.input.getAnything;
+
+		console.log("get url: " + url);
+
+		var getRequest = {
+			method: 'GET',
+			url: url
+		};
+
+		$http(getRequest).then(function(response) {
+			console.log("success!");
+			console.log(response);
+		}, defaultErrorCallback);
+
+	};
+
+	$scope.postMe = function() {
+		var postRequest = {
+			method: 'POST',
+			url: "https://agile-ridge-4422.herokuapp.com/scrape",
+			// confirm: 'confirm'
+		};
+
+		$http(postRequest).then(function(response) {
+			console.log("success");
+			console.log(response);
+		}, defaultErrorCallback);
+	};
+
 
 	$scope.startChain = function() {
 

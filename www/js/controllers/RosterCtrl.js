@@ -8,11 +8,15 @@ angular.module('nickff')
 
 function RosterCtrl($scope, Roster) {
 
+	// $scope.roster = {};
 
 	$scope.getRoster = function() {
-		$scope.roster = Roster.getRoster();
-		console.log("$scope.roster:");
-		console.log($scope.roster);
+		// $scope.roster.lineup = Roster.getRoster();
+		Roster.getRoster().then(function(response) {
+			console.log("response in ctrl");
+			$scope.roster = response;
+			console.log($scope.roster);
+		}, defaultErrorCallback);
 	};
 
 

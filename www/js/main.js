@@ -2,6 +2,7 @@
 token = null;
 leagueKey = null;
 teamKey = null;
+BASE_URL = "https://fantasysports.yahooapis.com/fantasy/v2/";
 
 
 function defaultErrorCallback(e) {
