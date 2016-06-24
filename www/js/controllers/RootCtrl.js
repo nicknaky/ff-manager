@@ -30,6 +30,7 @@ function RootCtrl($scope, $state, OauthService) {
 				break;
 
 			case 'transactions':
+				$state.go('transactions');
 				break;
 
 			case 'settings':

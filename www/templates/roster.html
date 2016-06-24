@@ -5,12 +5,12 @@
 	<button ng-click="getRoster()">Get Roster</button>
 
       	<ul class="collection">
-            <li class="collection-item blue-grey darken-3 white-text roster" ng-repeat="player in roster">
+            <li class="collection-item blue-grey darken-3 white-text roster" ng-repeat="player in roster.lineup">
             	<div>
-	            	<div class="team-pos">{{player[1].selected_position[1].position}}</div>
+	            	<div class="team-pos">{{player.selectedPosition}}</div>
 	            	<div class="player-container">
 	            		<div class="player-info">
-	            			<span class='player-name'>{{player[0][2].name.full}}</span> <span class="player-team">{{player[0][6].editorial_team_abbr || player[0][7].editorial_team_abbr || player[0][8].editorial_team_abbr}} - {{player[0][9].display_position || player[0][10].display_position || player[0][11].display_position}}</span> <span class="player-status">{{player[0][3].status}}</span>
+	            			<span class='player-name'>{{player.name}}</span> <span class="player-team">{{player.team}} - {{player.position}}</span> <span class="player-status">{{player.status}}</span>
 	            		</div>
 	            		<div class="player-matchup">Sun 1:00PM v DAL </div>	
 	            	</div>

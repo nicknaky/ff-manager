@@ -60,7 +60,14 @@ angular.module('nickff', ['ionic', 'base64'])
     url: '/',
     templateUrl: 'templates/roster.html',
     controller: 'RosterCtrl'
-  });
+  })
+  .state('transactions', {
+    url: '/',
+    templateUrl: 'templates/transactions.html',
+    controller: 'TransactionsCtrl'
+  })
+
+  ;
 
   
   $urlRouterProvider.otherwise('/');

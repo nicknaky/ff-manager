@@ -1,4 +1,4 @@
-sangular.module('nickff')
+angular.module('nickff')
 .factory('Players', [
 	'$window',
 	'$http',
@@ -26,7 +26,7 @@ function Players($window, $http) {
 		var d = new Date();
 		var today = d.getDay();
 
-		var lastUpdated = parseInt($window.localstorage['projections_last_updated']);
+		var lastUpdated = parseInt($window.localStorage['projections_last_updated']);
 
 
 		console.log("lastUpdated: " + lastUpdated);

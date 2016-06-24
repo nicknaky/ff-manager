@@ -13,7 +13,6 @@ function Roster($http) {
 	return {
 		lineup: lineup,
 		fetchData: fetchData,
-		fetchStats: fetchStats,
 		getRoster: getRoster,
 		getNames: getNames
 
@@ -22,37 +21,6 @@ function Roster($http) {
 	function getNames() {
 		
 	}
-
-	function fetchStats() {
-
-		var url = 'https://fantasysports.yahooapis.com/fantasy/v2/team/' + teamKey + '/players/stats;type=week;week=current?format=json';
-		
-		var rosterRequest = {
-			method: "GET",
-			url: url
-		};
-		return $http(rosterRequest).then(function(response) {
-			console.log("Got stats data");
-			console.log(response.data);
-
-		
-			var rosterCount = response.data.fantasy_content.team[1].players.count;
-			
-			for (var i=0; i<rosterCount; i++) {
-		
-				var player = response.data.fantasy_content.team[1].roster[0].players[i].player; 
-
-				lineup.push(player);
-				console.log(lineup[i]);
-
-				playerKeys.push(player[0][0].player_key);
-			}
-		
-		}, defaultErrorCallback);
-
-	}
-
-
 
 	function fetchData() {
 
@@ -79,6 +47,7 @@ function Roster($http) {
 				player.status = playerRaw[0][3].status;
 				player.team = playerRaw[0][6].editorial_team_abbr || playerRaw[0][7].editorial_team_abbr || playerRaw[0][8].editorial_team_abbr;
 				player.position = playerRaw[0][9].display_position || playerRaw[0][10].display_position || playerRaw[0][11].display_position;
+				player.selectedPosition = playerRaw[1].selected_position[1].position;
 
  				// loop through the second array query and join with player key to get points data
 				for (var j=0; j<rosterCount; j++) {
@@ -88,6 +57,7 @@ function Roster($http) {
 			 		}
 				}
 
+				// console.log(player);
 				lineup.push(player);
 
 			}
@@ -98,20 +68,7 @@ function Roster($http) {
 
 
 	function getRoster() {
-
 		return fetchData();
-		// if (lineup.length === 0) {
-			// fetchData().then(function(response) {
-			// 	console.log("final success callback, returning lineup!");
-			// 	return lineup;
-			// }, defaultErrorCallback);
-		// } else {
-		// 	console.log("existing lineup found!");
-		// 	return lineup;
-		// }
-
-		
-
 	}
 
 

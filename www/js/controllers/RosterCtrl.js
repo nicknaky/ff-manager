@@ -2,21 +2,21 @@ angular.module('nickff')
 .controller('RosterCtrl', [
 	'$scope',
 	'Roster',
+	'Projections',
 	RosterCtrl
 	]);
 
 
-function RosterCtrl($scope, Roster) {
+function RosterCtrl($scope, Roster, Projections) {
 
-	// $scope.roster = {};
+
+	$scope.roster = Roster;
+	$scope.projections = Projections;
+	Projections.fetchData();
 
 	$scope.getRoster = function() {
-		// $scope.roster.lineup = Roster.getRoster();
-		Roster.getRoster().then(function(response) {
-			console.log("response in ctrl");
-			$scope.roster = response;
-			console.log($scope.roster);
-		}, defaultErrorCallback);
+		Roster.getRoster();
+		
 	};
 
 
